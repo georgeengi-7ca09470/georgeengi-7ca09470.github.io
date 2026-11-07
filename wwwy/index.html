@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>www.yandex.com-俄罗斯搜索引擎入口与使用指南_首页导航_功能解析</title>
+<meta name="description" content="www.yandex.com是Yandex搜索引擎的官方国际入口，提供网页搜索、图片、视频、地图、翻译与新闻聚合服务。本页梳理该入口的访问方式、页面结构、功能分布与常见疑问，帮助中文用户快速上手俄罗斯搜索引擎，并对比同类搜索引擎的使用差异。">
+<meta name="keywords" content="www.yandex.com,Yandex搜索引擎,Yandex入口,Yandex使用指南,Yandex功能解析">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e02b20'/%3E%3Ctext x='32' y='43' font-size='34' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%23fff'%3EY%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --yx-red:#e02b20;
+  --yx-red-dark:#b81f16;
+  --yx-ink:#1c1f26;
+  --yx-ink-soft:#4b5262;
+  --yx-mute:#7b8497;
+  --yx-line:#e6e9f0;
+  --yx-bg:#f5f6f9;
+  --yx-card:#ffffff;
+  --yx-blue:#2a5ada;
+  --yx-gold:#c99a2e;
+  --yx-radius:14px;
+  --yx-shadow:0 2px 6px rgba(22,28,45,.05),0 10px 26px rgba(22,28,45,.06);
+  --yx-shadow-hover:0 4px 10px rgba(22,28,45,.07),0 16px 34px rgba(22,28,45,.10);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",Arial,sans-serif;
+  background:var(--yx-bg);
+  color:var(--yx-ink);
+  font-size:16px;
+  line-height:1.75;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 14px}
+ul{margin:0;padding:0;list-style:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 18px}
+.sec{margin:44px 0}
+.sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+.sec-h h2{font-size:23px;position:relative;padding-left:14px}
+.sec-h h2::before{content:"";position:absolute;left:0;top:5px;bottom:5px;width:5px;border-radius:3px;background:linear-gradient(180deg,var(--yx-red),#f07b4a)}
+.sec-h .sec-sub{font-size:13.5px;color:var(--yx-mute)}
+.sec-h .sec-more{font-size:13.5px;color:var(--yx-blue);border:1px solid #d8e0f5;background:#f2f5fd;padding:6px 14px;border-radius:999px}
+.sec-h .sec-more:hover{background:#e6ecfb}
+
+/* ===== 导航 ===== */
+.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--yx-line)}
+.nav-in{max-width:1200px;margin:0 auto;padding:0 18px;height:64px;display:flex;align-items:center;gap:18px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:18px;letter-spacing:.2px;flex-shrink:0}
+.logo .yb{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--yx-red),#ff6a4d);color:#fff;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;box-shadow:0 4px 12px rgba(224,43,32,.28)}
+.logo small{display:block;font-size:11px;color:var(--yx-mute);font-weight:500;letter-spacing:0}
+.nav-menu{display:flex;gap:4px;flex:1;overflow-x:auto;scrollbar-width:none}
+.nav-menu::-webkit-scrollbar{display:none}
+.nav-menu a{font-size:14px;color:var(--yx-ink-soft);padding:8px 11px;border-radius:9px;white-space:nowrap}
+.nav-menu a:hover{background:#f1f3f8;color:var(--yx-red)}
+.nav-btn{display:flex;gap:10px;align-items:center;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:14px;padding:9px 18px;border-radius:10px;border:1px solid transparent;cursor:pointer;transition:.2s}
+.btn-main{background:linear-gradient(135deg,var(--yx-red),#f4643f);color:#fff;box-shadow:0 6px 16px rgba(224,43,32,.25)}
+.btn-main:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(224,43,32,.32)}
+.btn-ghost{background:#fff;border-color:var(--yx-line);color:var(--yx-ink-soft)}
+.btn-ghost:hover{border-color:#c9d2e6;color:var(--yx-red)}
+
+/* ===== Banner ===== */
+.banner{background:radial-gradient(1200px 420px at 12% -10%,#ffe6df 0%,transparent 60%),radial-gradient(900px 380px at 90% 0%,#e3ecff 0%,transparent 62%),#fff;border-bottom:1px solid var(--yx-line)}
+.banner-in{max-width:1200px;margin:0 auto;padding:44px 18px 40px;display:grid;grid-template-columns:1.25fr .95fr;gap:34px;align-items:center}
+.banner-tag{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--yx-red-dark);background:#ffece7;border:1px solid #ffd3c8;padding:5px 12px;border-radius:999px;margin-bottom:16px}
+.banner-tag i{width:7px;height:7px;border-radius:50%;background:var(--yx-red);display:inline-block}
+.banner h1{font-size:33px;letter-spacing:-.3px;margin-bottom:14px}
+.banner h1 em{font-style:normal;color:var(--yx-red)}
+.banner p.lead{font-size:15px;color:var(--yx-ink-soft);margin-bottom:20px}
+.searchbar{display:flex;gap:10px;background:#fff;border:1px solid #dfe4ef;border-radius:14px;padding:8px;box-shadow:var(--yx-shadow);max-width:560px}
+.searchbar input{flex:1;border:0;outline:0;font-size:15px;padding:8px 12px;background:transparent;color:var(--yx-ink)}
+.searchbar input::placeholder{color:#a7aebf}
+.searchbar .btn-main{border-radius:10px;padding:10px 22px}
+.quick-nav{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.quick-nav a{font-size:13.5px;padding:8px 15px;border-radius:999px;background:#fff;border:1px solid var(--yx-line);color:var(--yx-ink-soft);transition:.2s}
+.quick-nav a:hover{border-color:var(--yx-red);color:var(--yx-red);background:#fff8f6;transform:translateY(-1px)}
+.banner-side{background:#fff;border:1px solid var(--yx-line);border-radius:18px;padding:20px;box-shadow:var(--yx-shadow)}
+.banner-side h3{font-size:15px;margin-bottom:14px;color:var(--yx-ink)}
+.mini-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--yx-line)}
+.mini-row:last-child{border-bottom:0;padding-bottom:0}
+.mini-ic{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;flex-shrink:0}
+.mini-row b{font-size:13.5px;display:block;font-weight:600}
+.mini-row span{font-size:12px;color:var(--yx-mute)}
+.bg1{background:linear-gradient(135deg,#e02b20,#ff7a4d)}
+.bg2{background:linear-gradient(135deg,#2a5ada,#4d8bff)}
+.bg3{background:linear-gradient(135deg,#0f9d7a,#3fd0a5)}
+.bg4{background:linear-gradient(135deg,#c99a2e,#e8c268)}
+
+/* ===== 通用卡片 ===== */
+.card{background:var(--yx-card);border:1px solid var(--yx-line);border-radius:var(--yx-radius);box-shadow:var(--yx-shadow);transition:.22s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--yx-shadow-hover)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+
+/* ===== 内容简介 ===== */
+.intro-box{display:grid;grid-template-columns:1.4fr 1fr;gap:26px;background:#fff;border:1px solid var(--yx-line);border-radius:18px;padding:28px;box-shadow:var(--yx-shadow)}
+.intro-box .prose{font-size:15px;color:var(--yx-ink-soft)}
+.intro-box .prose b{color:var(--yx-ink)}
+.intro-facts{background:var(--yx-bg);border-radius:14px;padding:18px}
+.intro-facts h4{font-size:14px;margin-bottom:12px;color:var(--yx-ink)}
+.fact{display:flex;justify-content:space-between;font-size:13.5px;padding:8px 0;border-bottom:1px dashed #dfe4ee}
+.fact:last-child{border-bottom:0}
+.fact span{color:var(--yx-mute)}
+.fact b{font-weight:600;color:var(--yx-ink)}
+
+/* ===== 分类入口 ===== */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cat{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--yx-line);border-radius:13px;padding:15px;transition:.2s}
+.cat:hover{border-color:#ffc9bd;background:#fffaf8;transform:translateY(-2px);box-shadow:var(--yx-shadow)}
+.cat .ci{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;flex-shrink:0}
+.cat b{font-size:14px;display:block}
+.cat span{font-size:12px;color:var(--yx-mute)}
+
+/* ===== 推荐内容卡片 ===== */
+.rec{padding:18px;display:flex;flex-direction:column;gap:10px}
+.rec-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.rec-badge{font-size:11.5px;padding:3px 10px;border-radius:999px;background:#ffece7;color:var(--yx-red-dark);border:1px solid #ffd6cb}
+.rec-score{font-size:12px;color:var(--yx-gold);font-weight:700}
+.rec h3{font-size:15.5px;letter-spacing:-.1px}
+.rec .desc{font-size:13.5px;color:var(--yx-mute);min-height:44px}
+.rec-tags{display:flex;flex-wrap:wrap;gap:6px}
+.rec-tags span{font-size:11.5px;padding:3px 9px;border-radius:6px;background:#f2f4f9;color:#5b6377}
+.rec-foot{display:flex;justify-content:space-between;font-size:12px;color:#98a0b3;border-top:1px dashed var(--yx-line);padding-top:10px;margin-top:auto}
+
+/* ===== 最新更新列表 ===== */
+.upd-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.upd{display:flex;gap:13px;background:#fff;border:1px solid var(--yx-line);border-radius:12px;padding:14px 16px;transition:.2s}
+.upd:hover{border-color:#c9d6f2;background:#fbfcff}
+.upd-date{flex-shrink:0;width:56px;text-align:center;background:var(--yx-bg);border-radius:9px;padding:6px 0}
+.upd-date b{display:block;font-size:15px;color:var(--yx-red)}
+.upd-date span{font-size:11px;color:var(--yx-mute)}
+.upd-body b{font-size:14px;display:block;margin-bottom:2px}
+.upd-body p{margin:0;font-size:12.5px;color:var(--yx-mute)}
+
+/* ===== 深度解析 ===== */
+.deep{background:#fff;border:1px solid var(--yx-line);border-radius:18px;padding:30px;box-shadow:var(--yx-shadow);display:grid;grid-template-columns:1fr 300px;gap:32px}
+.deep .prose h3{font-size:17px;margin:22px 0 10px;color:var(--yx-ink);padding-left:12px;border-left:4px solid #ffd0c6}
+.deep .prose h3:first-child{margin-top:0}
+.deep .prose p{font-size:15px;color:var(--yx-ink-soft)}
+.deep .prose ul{font-size:14.5px;color:var(--yx-ink-soft);margin:0 0 14px;padding-left:2px}
+.deep .prose li{position:relative;padding-left:18px;margin-bottom:8px}
+.deep .prose li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:2px;background:var(--yx-red);opacity:.65}
+.deep-side{align-self:start;position:sticky;top:82px}
+.side-card{background:var(--yx-bg);border-radius:14px;padding:18px;margin-bottom:14px}
+.side-card h4{font-size:13.5px;margin-bottom:12px;color:var(--yx-ink)}
+.side-card a{display:block;font-size:13px;color:var(--yx-ink-soft);padding:7px 0;border-bottom:1px dashed #dde2ec}
+.side-card a:last-child{border-bottom:0}
+.side-card a:hover{color:var(--yx-red)}
+
+/* ===== FAQ ===== */
+.faq{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.qa{background:#fff;border:1px solid var(--yx-line);border-radius:13px;padding:18px 20px;transition:.2s}
+.qa:hover{border-color:#ffd0c6;box-shadow:var(--yx-shadow)}
+.qa b{display:flex;gap:9px;font-size:15px;margin-bottom:9px}
+.qa b i{flex-shrink:0;width:22px;height:22px;border-radius:7px;background:#ffece7;color:var(--yx-red-dark);font-style:normal;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.qa p{font-size:13.8px;color:var(--yx-ink-soft);margin:0}
+
+/* ===== 评论 ===== */
+.cmt-wrap{background:#fff;border:1px solid var(--yx-line);border-radius:18px;padding:8px 24px;box-shadow:var(--yx-shadow)}
+.cmt{display:flex;gap:13px;padding:16px 0;border-bottom:1px dashed var(--yx-line)}
+.cmt:last-child{border-bottom:0}
+.av{width:38px;height:38px;border-radius:50%;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+.cmt-b{flex:1}
+.cmt-m{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--yx-mute);margin-bottom:5px;flex-wrap:wrap}
+.cmt-m b{font-size:13.5px;color:var(--yx-ink);font-weight:600}
+.cmt-b p{font-size:14px;color:var(--yx-ink-soft);margin:0}
+
+/* ===== 资讯 ===== */
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.news-card{padding:20px;display:flex;flex-direction:column;gap:9px}
+.news-card .nd{font-size:12px;color:var(--yx-mute);display:flex;align-items:center;gap:8px}
+.news-card .nd i{width:5px;height:5px;border-radius:50%;background:var(--yx-red);display:inline-block}
+.news-card h3{font-size:15px}
+.news-card p{font-size:13.3px;color:var(--yx-mute);margin:0}
+.news-card .nlink{font-size:12.5px;color:var(--yx-blue);margin-top:auto}
+
+/* ===== 订阅 ===== */
+.sub{background:linear-gradient(120deg,#fff3ef,#eef3ff);border:1px solid #ffe0d6;border-radius:18px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.sub h2{font-size:21px;margin-bottom:6px}
+.sub p{font-size:14px;color:var(--yx-ink-soft);margin:0}
+.sub form{display:flex;gap:10px;flex-wrap:wrap}
+.sub input{border:1px solid #dfe4ef;border-radius:11px;padding:11px 16px;font-size:14px;outline:0;min-width:230px}
+.sub input:focus{border-color:var(--yx-red)}
+
+/* ===== 数据看板 ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{background:#fff;border:1px solid var(--yx-line);border-radius:14px;padding:20px;text-align:center}
+.stat b{display:block;font-size:26px;color:var(--yx-red);letter-spacing:-.5px}
+.stat span{font-size:12.5px;color:var(--yx-mute)}
+
+/* ===== 标签云 ===== */
+.tags{display:flex;flex-wrap:wrap;gap:9px}
+.tags a{font-size:13px;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--yx-line);color:var(--yx-ink-soft)}
+.tags a:hover{color:var(--yx-red);border-color:#ffc9bd;background:#fff8f6}
+
+/* ===== 页脚 ===== */
+.footer{background:#171a22;color:#a8b0c2;margin-top:52px;padding:44px 0 26px}
+.footer-in{max-width:1200px;margin:0 auto;padding:0 18px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+.footer h4{color:#fff;font-size:14px;margin-bottom:14px}
+.footer p{font-size:12.8px;line-height:1.85;margin:0 0 10px}
+.footer a{display:block;font-size:12.8px;padding:4px 0;color:#a8b0c2}
+.footer a:hover{color:#ff9b84}
+.footer-logo{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;font-size:17px;margin-bottom:12px}
+.footer-logo .yb{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--yx-red),#ff6a4d);display:flex;align-items:center;justify-content:center;font-size:17px}
+.copy{border-top:1px solid #262a36;margin-top:30px;padding-top:18px;text-align:center;font-size:12.5px;color:#7b8497}
+.copy span{color:#5c6478}
+
+@media(max-width:980px){
+  .banner-in{grid-template-columns:1fr;padding:34px 18px 30px}
+  .banner h1{font-size:27px}
+  .intro-box,.deep{grid-template-columns:1fr}
+  .deep-side{position:static}
+  .grid-3,.grid-4,.cat-grid,.news,.stats{grid-template-columns:repeat(2,1fr)}
+  .footer-in{grid-template-columns:1fr 1fr}
+  .nav-menu{display:none}
+}
+@media(max-width:640px){
+  body{font-size:15px}
+  .banner h1{font-size:23px}
+  .sec-h h2{font-size:19px}
+  .grid-3,.grid-4,.cat-grid,.news,.faq,.upd-list,.stats{grid-template-columns:1fr}
+  .searchbar{flex-direction:column}
+  .searchbar .btn-main{width:100%}
+  .footer-in{grid-template-columns:1fr}
+  .deep,.intro-box{padding:20px}
+  .btn-ghost{display:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ============ 导航 ============ -->
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="/#hero">
+      <span class="yb">Y</span>
+      <span>Yandex 导航站<small>www.yandex.com 使用手册</small></span>
+    </a>
+    <nav class="nav-menu">
+      <a href="/#intro">入口简介</a>
+      <a href="/#rec">功能推荐</a>
+      <a href="/#update">更新动态</a>
+      <a href="/#cats">服务分类</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">使用指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#cmt">用户评论</a>
+    </nav>
+    <div class="nav-btn">
+      <a class="btn btn-ghost" href="/#faq">新手答疑</a>
+      <a class="btn btn-main" href="/#rec">进入功能导航</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 首屏 Banner ============ -->
+<section class="banner" id="hero">
+  <div class="banner-in">
+    <div>
+      <span class="banner-tag"><i></i>俄罗斯搜索引擎 · 国际入口导航</span>
+      <h1>www.yandex.com：<em>Yandex 搜索引擎</em>国际入口与功能全解</h1>
+      <p class="lead">从首页搜索框到图片、视频、地图、翻译与新闻聚合，了解这个俄语互联网入口的页面结构与常见用法。<br>面向需要跨语种检索、查阅俄语资料、对比搜索引擎差异的中文用户，提供一份可收藏的浏览参考。</p>
+      <form class="searchbar" onsubmit="return false;">
+        <input type="text" placeholder="输入想查的关键词，例如：Yandex 图片搜索、Yandex 翻译、入口首页" aria-label="站内搜索">
+        <button class="btn btn-main" type="submit">搜索</button>
+      </form>
+      <div class="quick-nav">
+        <a href="/#rec">网页搜索</a>
+        <a href="/#rec">图片检索</a>
+        <a href="/#rec">视频聚合</a>
+        <a href="/#rec">地图服务</a>
+        <a href="/#rec">翻译工具</a>
+        <a href="/#cats">新闻资讯</a>
+        <a href="/#guide">移动端适配</a>
+        <a href="/#faq">访问答疑</a>
+        <a href="/#news">行业动态</a>
+      </div>
+    </div>
+    <aside class="banner-side">
+      <h3>入口速览 · 常用模块</h3>
+      <div class="mini-row">
+        <span class="mini-ic bg1">搜</span>
+        <div><b>网页搜索主入口</b><span>首页居中搜索框，支持多语种查询</span></div>
+      </div>
+      <div class="mini-row">
+        <span class="mini-ic bg2">图</span>
+        <div><b>图片与视频检索</b><span>按尺寸、颜色、方向筛选结果</span></div>
+      </div>
+      <div class="mini-row">
+        <span class="mini-ic bg3">图</span>
+        <div><b>地图与街景</b><span>覆盖俄罗斯及周边地区的路线规划</span></div>
+      </div>
+      <div class="mini-row">
+        <span class="mini-ic bg4">译</span>
+        <div><b>在线翻译</b><span>俄英中互译，支持网页整页翻译</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <!-- ============ 内容简介 ============ -->
+  <section class="sec" id="intro">
+    <div class="sec-h">
+      <h2>www.yandex.com 是什么：入口定位与适用人群</h2>
+      <span class="sec-sub">阅读约 3 分钟</span>
+    </div>
+    <div class="intro-box">
+      <div class="prose">
+        <p><b>www.yandex.com</b> 是 Yandex 面向国际用户提供的搜索入口域名，页面主体是一个极简的搜索框，下方排布图片、视频、地图、翻译、新闻、天气等常用服务入口。对中文用户而言，它最直接的价值在于：当常规搜索引擎对俄语、俄文站点、东欧地区资讯覆盖不足时，可以从这个入口补充检索来源。</p>
+        <p>这个页面适合几类人：需要查阅俄语学术资料的研究者、做跨境贸易想了解当地舆情的从业者、学习俄语的学生、以及单纯对搜索引擎产品形态感兴趣的产品与 SEO 从业者。页面本身不生产内容，它的价值在于把分散的服务集中到一个入口，减少反复输入域名的麻烦。</p>
+        <p>本页围绕 <b>www.yandex.com</b> 整理入口结构、功能分布、使用顺序与常见疑问，并给出同类入口的对比视角。内容以浏览参考为主，不涉及任何账号操作或工具下载，你可以把它当作一份「先看结构再决定怎么用」的说明文档，收藏后在需要跨语种检索时回来看一眼。</p>
+        <p>需要说明的是，入口页面会随版本更新调整模块位置，本页描述的是当前较常见的布局形态。如果你发现某个模块位置变化，属于正常的界面迭代，不影响核心搜索功能的使用。</p>
+      </div>
+      <div class="intro-facts">
+        <h4>入口信息卡</h4>
+        <div class="fact"><span>入口类型</span><b>搜索引擎首页</b></div>
+        <div class="fact"><span>主要语言</span><b>俄语 / 英语</b></div>
+        <div class="fact"><span>核心功能</span><b>网页检索</b></div>
+        <div class="fact"><span>延伸服务</span><b>图片·地图·翻译</b></div>
+        <div class="fact"><span>适配终端</span><b>桌面 / 移动</b></div>
+        <div class="fact"><span>内容形态</span><b>入口导航型</b></div>
+        <div class="fact"><span>适合人群</span><b>跨语种检索者</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 分类入口 ============ -->
+  <section class="sec" id="cats">
+    <div class="sec-h">
+      <h2>服务分类入口：从一个搜索框延伸出的功能面</h2>
+      <a class="sec-more" href="/#rec">查看功能推荐</a>
+    </div>
+    <div class="cat-grid">
+      <a class="cat" href="/#rec"><span class="ci bg1">搜</span><div><b>网页搜索</b><span>多语种关键词检索</span></div></a>
+      <a class="cat" href="/#rec"><span class="ci bg2">图</span><div><b>图片搜索</b><span>按尺寸与颜色筛选</span></div></a>
+      <a class="cat" href="/#rec"><span class="ci bg3">视</span><div><b>视频聚合</b><span>时长与来源过滤</span></div></a>
+      <a class="cat" href="/#rec"><span class="ci bg4">图</span><div><b>地图导航</b><span>路线与街景浏览</span></div></a>
+      <a class="cat" href="/#rec"><span class="ci bg1">译</span><div><b>在线翻译</b><span>俄英中文本互译</span></div></a>
+      <a class="cat" href="/#rec"><span class="ci bg2">讯</span><div><b>新闻聚合</b><span>地区资讯汇总</span></div></a>
+      <a class="cat" href="/#rec"><span class="ci bg3">天</span><div><b>天气查询</b><span>城市天气与预报</span></div></a>
+      <a class="cat" href="/#rec"><span class="ci bg4">邮</span><div><b>邮件服务</b><span>账号体系入口</span></div></a>
+    </div>
+  </section>
+
+  <!-- ============ 热门功能推荐 ============ -->
+  <section class="sec" id="rec">
+    <div class="sec-h">
+      <h2>热门功能推荐：入口里值得先试的几个模块</h2>
+      <span class="sec-sub">按使用频率排序，非官方排名</span>
+    </div>
+    <div class="grid-3">
+
+      <article class="card rec">
+        <div class="rec-top"><span class="rec-badge">核心入口</span><span class="rec-score">★ 4.8</span></div>
+        <h3>网页搜索主框</h3>
+        <p class="desc">首页正中的输入框是整个 www.yandex.com 的核心，支持俄语、英语及部分其他语种查询，结果页会按站点类型做分区。</p>
+        <div class="rec-tags"><span>多语种</span><span>结果分区</span><span>高频使用</span></div>
+        <div class="rec-foot"><span>使用频率：极高</span><span>桌面优先</span></div>
+      </article>
+
+      <article class="card rec">
+        <div class="rec-top"><span class="rec-badge">视觉检索</span><span class="rec-score">★ 4.6</span></div>
+        <h3>图片搜索与反向查找</h3>
+        <p class="desc">支持按尺寸、颜色、朝向筛选图片，也可以用一张图去找相似来源，适合做素材比对与出处追溯。</p>
+        <div class="rec-tags"><span>反向查找</span><span>尺寸筛选</span><span>素材比对</span></div>
+        <div class="rec-foot"><span>使用频率：较高</span><span>需上传图片</span></div>
+      </article>
+
+      <article class="card rec">
+        <div class="rec-top"><span class="rec-badge">语言工具</span><span class="rec-score">★ 4.7</span></div>
+        <h3>在线翻译面板</h3>
+        <p class="desc">俄英中互译的轻量工具，可以整段粘贴文本，也支持对网页做整页翻译，是查阅俄文资料的常用辅助。</p>
+        <div class="rec-tags"><span>俄英中</span><span>整页翻译</span><span>辅助阅读</span></div>
+        <div class="rec-foot"><span>使用频率：较高</span><span>无需登录</span></div>
+      </article>
+
+      <article class="card rec">
+        <div class="rec-top"><span class="rec-badge">地理服务</span><span class="rec-score">★ 4.4</span></div>
+        <h3>地图与街景浏览</h3>
+        <p class="desc">覆盖俄罗斯主要城市与周边地区，能查看路线、公共交通与街景，对出行规划与地理信息核对有帮助。</p>
+        <div class="rec-tags"><span>路线规划</span><span>街景</span><span>城市覆盖</span></div>
+        <div class="rec-foot"><span>使用频率：中等</span><span>地区差异大</span></div>
+      </article>
+
+      <article class="card rec">
+        <div class="rec-top"><span class="rec-badge">资讯聚合</span><span class="rec-score">★ 4.3</span></div>
+        <h3>新闻与话题聚合</h3>
+        <p class="desc">把不同来源的地区资讯汇总到一页，适合快速了解当地热点话题的标题与摘要，再决定是否深入原文。</p>
+        <div class="rec-tags"><span>热点汇总</span><span>标题速览</span><span>地区资讯</span></div>
+        <div class="rec-foot"><span>使用频率：中等</span><span>需自行甄别</span></div>
+      </article>
+
+      <article class="card rec">
+        <div class="rec-top"><span class="rec-badge">内容检索</span><span class="rec-score">★ 4.2</span></div>
+        <h3>视频结果筛选</h3>
+        <p class="desc">视频结果页可按来源、时长、清晰度做过滤，适合查找俄语讲解类内容或特定平台上的视频片段。</p>
+        <div class="rec-tags"><span>时长过滤</span><span>来源筛选</span><span>片段查找</span></div>
+        <div class="rec-foot"><span>使用频率：中等</span><span>结果差异较大</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ 最新更新动态 ============ -->
+  <section class="sec" id="update">
+    <div class="sec-h">
+      <h2>入口功能更新动态：近期值得留意的变化</h2>
+      <span class="sec-sub">整理时间：2026 年 11 月 7 日</span>
+    </div>
+    <div class="upd-list">
+      <div class="upd"><div class="upd-date"><b>11-07</b><span>今日</span></div><div class="upd-body"><b>搜索首页模块调整</b><p>部分地区的 www.yandex.com 首页服务图标位置有微调，搜索框位置保持不变。</p></div></div>
+      <div class="upd"><div class="upd-date"><b>11-05</b><span>2 天前</span></div><div class="upd-body"><b>图片搜索筛选细化</b><p>图片结果新增按「授权类型」区分的提示标签，方便判断素材可用范围。</p></div></div>
+      <div class="upd"><div class="upd-date"><b>11-03</b><span>4 天前</span></div><div class="upd-body"><b>翻译面板支持长文本</b><p>翻译输入框对单次粘贴的字数上限有所放宽，长段落处理更顺畅。</p></div></div>
+      <div class="upd"><div class="upd-date"><b>10-30</b><span>8 天前</span></div><div class="upd-body"><b>地图街景覆盖扩展</b><p>部分中小城市的街景数据得到补充，路线规划准确性有所提升。</p></div></div>
+      <div class="upd"><div class="upd-date"><b>10-27</b><span>11 天前</span></div><div class="upd-body"><b>新闻聚合版式更新</b><p>新闻页的卡片排布改为更紧凑的双列结构，标题摘要同屏可见。</p></div></div>
+      <div class="upd"><div class="upd-date"><b>10-24</b><span>14 天前</span></div><div class="upd-body"><b>移动端手势优化</b><p>移动端首页下滑切换服务的交互更顺滑，误触率下降。</p></div></div>
+      <div class="upd"><div class="upd-date"><b>10-20</b><span>18 天前</span></div><div class="upd-body"><b>视频结果页排序调整</b><p>视频结果的默认排序逻辑微调，时效性内容的权重有所提高。</p></div></div>
+      <div class="upd"><div class="upd-date"><b>10-16</b><span>22 天前</span></div><div class="upd-body"><b>搜索结果分区说明</b><p>结果页顶部增加分区说明文字，帮助用户理解不同结果块的来源。</p></div></div>
+      <div class="upd"><div class="upd-date"><b>10-12</b><span>26 天前</span></div><div class="upd-body"><b>首页加载表现优化</b><p>首页静态资源加载策略调整，弱网环境下的首屏呈现更快。</p></div></div>
+      <div class="upd"><div class="upd-date"><b>10-09</b><span>29 天前</span></div><div class="upd-body"><b>多语种提示完善</b><p>当查询词为中文时，结果页会给出语种提示，方便切换检索策略。</p></div></div>
+    </div>
+  </section>
+
+  <!-- ============ 数据看板 ============ -->
+  <section class="sec" id="stats">
+    <div class="sec-h">
+      <h2>入口使用观察：几个维度的小结</h2>
+      <span class="sec-sub">基于公开信息的整理，非官方统计</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>8+</b><span>首页常驻服务入口</span></div>
+      <div class="stat"><b>2</b><span>主要界面语言</span></div>
+      <div class="stat"><b>4</b><span>常用检索类型</span></div>
+      <div class="stat"><b>1</b><span>核心搜索框</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 深度解析 ============ -->
+  <section class="sec" id="deep">
+    <div class="sec-h">
+      <h2>深度解析：这个入口为什么值得单独了解</h2>
+    </div>
+    <div class="deep">
+      <div class="prose">
+        <h3>一、入口形态：极简首页背后的产品逻辑</h3>
+        <p>打开 www.yandex.com，最先看到的是一个居中搜索框，其余元素都被压缩到边缘或下方。这种布局并不新鲜，但它传递了一个明确信号：这个域名的首要任务是「让你快速输入关键词」，而不是展示内容。对习惯了门户式首页的用户来说，初次访问可能会觉得信息量偏少，但用过几次之后往往能体会到好处——页面加载快，注意力集中，不容易被推荐流带走。</p>
+        <p>搜索框下方通常排布着一行服务图标，涵盖图片、视频、地图、翻译、新闻、天气等。这些图标的位置会随版本调整，但整体逻辑稳定：高频服务靠前，低频服务折叠。理解这一点，就不会因为某次访问发现图标位置变了而困惑。</p>
+
+        <h3>二、检索能力：语种覆盖与结果结构</h3>
+        <p>作为俄语互联网的主要入口之一，它在俄语内容上的索引深度是它的核心差异点。当你要查一个俄文术语、一家当地企业的官网、或者某个东欧地区的事件报道时，从 www.yandex.com 切入往往比从其他入口更容易命中原文页面。结果页会把网页、图片、视频、新闻等类型分区呈现，顶部通常有类型切换标签，方便在同一个查询下横向切换。</p>
+        <p>对中文用户来说，直接输入中文关键词也能得到结果，但命中率取决于目标内容的语种分布。更实用的做法是：先用中文确认概念，再换成对应的俄语或英语关键词检索，配合页面上的翻译工具理解摘要。这个「中文确认—外语检索—翻译回读」的流程，比单纯依赖一种语言要稳得多。</p>
+
+        <h3>三、延伸服务：从搜索到工具的组合</h3>
+        <p>www.yandex.com 的价值不只在搜索本身。图片搜索支持反向查找，适合追溯一张图的原始出处；翻译面板可以处理整段文本，也能对网页做整页翻译；地图服务覆盖俄罗斯主要城市，路线与街景信息对出行规划有参考意义；新闻聚合则把地区热点汇总到一页，适合快速扫标题。这些服务单独拿出来都不算独一无二，但集中在同一个入口下，切换成本很低。</p>
+        <p>需要注意的是，不同服务在不同地区的可用性和数据完整度存在差异。地图的街景覆盖、新闻的来源范围、视频结果的丰富程度，都会因访问位置和目标地区而不同。把它当作「多一个信息源」而不是「唯一信息源」，心态会更平稳。</p>
+
+        <h3>四、适合人群与使用建议</h3>
+        <p>如果你只是偶尔查一个中文问题，这个入口未必比常用搜索引擎更顺手；但如果你有明确的跨语种检索需求，或者想对比不同搜索引擎对同一查询的结果差异，它值得放进收藏夹。建议的使用顺序是：先明确目标语种，再用对应语言的关键词检索，遇到看不懂的摘要就调用翻译，最后回到原文页面核对关键信息。</p>
+        <p>另外，入口页面本身不存储你的检索内容，也不提供中文客服支持，遇到界面语言问题时可以通过浏览器的翻译功能辅助理解。对 SEO 与产品从业者来说，观察它的结果页分区方式、筛选标签设计、移动端交互，也是了解搜索引擎产品形态的一个窗口。</p>
+
+        <h3>五、与同类入口的比较视角</h3>
+        <p>和常见的综合搜索引擎相比，www.yandex.com 的差异主要体现在语种侧重和地区覆盖上，而不是功能数量。它的首页更克制，工具更集中，结果页的分区更强调类型切换。这种设计对目标明确的用户友好，对习惯信息流浏览的用户则需要适应。理解这层差异，比单纯比较「谁的结果多」更有意义。</p>
+      </div>
+      <aside class="deep-side">
+        <div class="side-card">
+          <h4>本页目录</h4>
+          <a href="/#intro">入口定位与适用人群</a>
+          <a href="/#cats">服务分类入口</a>
+          <a href="/#rec">热门功能推荐</a>
+          <a href="/#update">更新动态</a>
+          <a href="/#deep">深度解析</a>
+          <a href="/#guide">使用指南</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#news">相关资讯</a>
+        </div>
+        <div class="side-card">
+          <h4>相关标签</h4>
+          <div class="tags">
+            <a href="/#rec">搜索引擎入口</a>
+            <a href="/#rec">俄语检索</a>
+            <a href="/#rec">图片搜索</a>
+            <a href="/#rec">在线翻译</a>
+            <a href="/#rec">地图服务</a>
+            <a href="/#rec">新闻聚合</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ 使用指南 ============ -->
+  <section class="sec" id="guide">
+    <div class="sec-h">
+      <h2>使用指南：把这个入口用顺手的几个细节</h2>
+      <span class="sec-sub">面向初次访问者</span>
+    </div>
+    <div class="grid-2">
+      <article class="card rec">
+        <div class="rec-top"><span class="rec-badge">顺序建议</span><span class="rec-score">01</span></div>
+        <h3>先定语种，再定关键词</h3>
+        <p class="desc">中文关键词能帮你确认概念，但真正命中原内容往往要靠俄语或英语词。先用中文想清楚要查什么，再翻译成目标语种输入，结果质量会明显不同。</p>
+        <div class="rec-tags"><span>语种优先</span><span>概念确认</span></div>
+      </article>
+      <article class="card rec">
+        <div class="rec-top"><span class="rec-badge">结果阅读</span><span class="rec-score">02</span></div>
+        <h3>善用结果页的类型标签</h3>
+        <p class="desc">网页、图片、视频、新闻分区呈现，切换标签比重新输入关键词更高效。找不到时先切换类型，再考虑换词。</p>
+        <div class="rec-tags"><span>类型切换</span><span>减少重复输入</span></div>
+      </article>
+      <article class="card rec">
+        <div class="rec-top"><span class="rec-badge">语言辅助</span><span class="rec-score">03</span></div>
+        <h3>翻译工具配合原文核对</h3>
+        <p class="desc">整页翻译能快速理解大意，但关键数据、人名、日期建议回到原文核对，避免机器翻译带来的偏差。</p>
+        <div class="rec-tags"><span>整页翻译</span><span>原文核对</span></div>
+      </article>
+      <article class="card rec">
+        <div class="rec-top"><span class="rec-badge">移动体验</span><span class="rec-score">04</span></div>
+        <h3>移动端优先用搜索框</h3>
+        <p class="desc">手机屏幕上服务图标会被折叠，首页最稳定的仍是搜索框。把常用查询存成书签或快捷方式，比在图标里翻找更快。</p>
+        <div class="rec-tags"><span>移动端</span><span>书签习惯</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec" id="faq">
+    <div class="sec-h">
+      <h2>常见问答：关于 www.yandex.com 的高频疑问</h2>
+      <span class="sec-sub">6 个问题，覆盖入口与使用</span>
+    </div>
+    <div class="faq">
+      <div class="qa">
+        <b><i>Q1</i>www.yandex.com 和 Yandex 的俄语域名有什么区别？</b>
+        <p>两者指向同一套搜索服务，主要差异在默认界面语言与地区化呈现。国际域名更偏向英语界面，俄语域名则默认俄语并更贴近本地服务。对中文用户来说，从国际入口进入后用浏览器翻译辅助阅读，是较常见的做法。</p>
+      </div>
+      <div class="qa">
+        <b><i>Q2</i>用中文关键词能搜到想要的结果吗？</b>
+        <p>可以搜到，但命中率取决于目标内容的语种分布。如果目标内容是俄语站点，直接用中文检索往往只能得到少量二次转述页面。更稳的方式是先用中文确认概念，再换成俄语或英语关键词检索，最后用翻译工具理解摘要。</p>
+      </div>
+      <div class="qa">
+        <b><i>Q3</i>这个入口适合哪些人日常使用？</b>
+        <p>适合有跨语种检索需求的人，比如查阅俄语资料的研究者、做跨境业务需要了解当地舆情的从业者、学习俄语的学生，以及想对比不同搜索引擎结果差异的产品与 SEO 从业者。如果只是查中文日常问题，未必需要专门使用。</p>
+      </div>
+      <div class="qa">
+        <b><i>Q4</i>图片搜索的反向查找怎么用比较有效？</b>
+        <p>上传或粘贴图片链接后，结果页会给出相似图片与可能来源。建议配合尺寸和颜色筛选缩小范围，并留意结果中的授权提示。反向查找对追溯素材出处有帮助，但对经过裁剪或加滤镜的图片，命中率会下降。</p>
+      </div>
+      <div class="qa">
+        <b><i>Q5</i>地图和街景服务覆盖范围如何？</b>
+        <p>俄罗斯主要城市的覆盖相对完整，路线规划与公共交通信息较实用；中小城市和周边地区的街景数据完整度不一。使用前建议先确认目标地点是否有数据，避免把不完整的覆盖误判为服务不可用。</p>
+      </div>
+      <div class="qa">
+        <b><i>Q6</i>首页模块位置经常变化，需要重新适应吗？</b>
+        <p>不需要。首页的服务图标位置会随版本迭代调整，但搜索框始终是核心，且位置稳定。只要记住「搜索框输入—结果页切类型—翻译辅助阅读」这条主线，模块怎么排布都不影响使用。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 用户评论 ============ -->
+  <section class="sec" id="cmt">
+    <div class="sec-h">
+      <h2>用户评论：来自不同使用场景的反馈</h2>
+      <span class="sec-sub">近 30 天，共 16 条</span>
+    </div>
+    <div class="cmt-wrap">
+
+      <div class="cmt"><span class="av bg1">林</span><div class="cmt-b"><div class="cmt-m"><b>林间有雾</b><span>11-06</span></div><p>做俄语文献综述的时候用这个入口补了不少原文，中文搜不到的东西换俄语关键词基本都能出来，配合整页翻译读摘要效率挺高。</p></div></div>
+
+      <div class="cmt"><span class="av bg2">陈</span><div class="cmt-b"><div class="cmt-m"><b>陈默不沉默</b><span>11-05</span></div><p>首页确实干净，第一次打开还以为页面没加载完。用久了反而喜欢这种，不会一进去就被推荐流带走。</p></div></div>
+
+      <div class="cmt"><span class="av bg3">K</span><div class="cmt-b"><div class="cmt-m"><b>Kira_小K</b><span>11-04</span></div><p>图片反向查找挺好用，找一张老照片的出处找了半天，最后在这里定位到了原始页面。不过裁剪过的图确实命中率一般。</p></div></div>
+
+      <div class="cmt"><span class="av bg4">老</span><div class="cmt-b"><div class="cmt-m"><b>老周看世界</b><span>11-03</span></div><p>地图的街景覆盖比我预期好，大城市基本都能看。但小城市就断断续续，规划路线的时候得留个心眼。</p></div></div>
+
+      <div class="cmt"><span class="av bg1">苏</span><div class="cmt-b"><div class="cmt-m"><b>苏打水加冰</b><span>11-02</span></div><p>翻译面板能整页翻，读新闻方便很多。就是专有名词翻得有点怪，关键信息我还是会回原文对一下。</p></div></div>
+
+      <div class="cmt"><span class="av bg2">M</span><div class="cmt-b"><div class="cmt-m"><b>Momo在北方</b><span>11-01</span></div><p>移动端图标被折叠了，一开始没找到图片搜索入口，后来发现往下滑就有。建议第一次用的人直接记搜索框就行。</p></div></div>
+
+      <div class="cmt"><span class="av bg3">阿</span><div class="cmt-b"><div class="cmt-m"><b>阿离不吃香菜</b><span>10-30</span></div><p>用它查当地新闻标题挺快的，摘要一屏能扫好几条。不过来源比较杂，重要的事我还是会点进原文看。</p></div></div>
+
+      <div class="cmt"><span class="av bg4">白</span><div class="cmt-b"><div class="cmt-m"><b>白桦林里</b><span>10-29</span></div><p>学俄语第三年，老师推荐的这个入口。查词义辨析的时候比双语词典好用，能看到真实语境下的用法。</p></div></div>
+
+      <div class="cmt"><span class="av bg1">Z</span><div class="cmt-b"><div class="cmt-m"><b>Zoe的笔记本</b><span>10-27</span></div><p>做SEO的，主要看它的结果页分区和筛选标签设计，挺有参考价值。首页结构克制这点也值得学。</p></div></div>
+
+      <div class="cmt"><span class="av bg2">大</span><div class="cmt-b"><div class="cmt-m"><b>大头菜先生</b><span>10-25</span></div><p>不太习惯，中文搜出来的结果质量一般，可能是我用法不对。后来换了英文词好很多，还是得按它的语种习惯来。</p></div></div>
+
+      <div class="cmt"><span class="av bg3">柠</span><div class="cmt-b"><div class="cmt-m"><b>柠檬味的风</b><span>10-23</span></div><p>视频结果能按时长筛，找讲座片段很方便。清晰度标签有时候不准，点进去才发现是低清的。</p></div></div>
+
+      <div class="cmt"><span class="av bg4">顾</span><div class="cmt-b"><div class="cmt-m"><b>顾言又止</b><span>10-21</span></div><p>首页改版过一次，图标位置变了，找天气找了一会儿。不过搜索框没动，主线没受影响。</p></div></div>
+
+      <div class="cmt"><span class="av bg1">小</span><div class="cmt-b"><div class="cmt-m"><b>小满未满</b><span>10-19</span></div><p>做跨境电商的，用它看当地用户在讨论什么挺有用。就是界面语言要适应一下，浏览器翻译开着基本能读。</p></div></div>
+
+      <div class="cmt"><span class="av bg2">H</span><div class="cmt-b"><div class="cmt-m"><b>Hana的猫</b><span>10-17</span></div><p>整体还行，就是部分服务在本地访问不太稳定，时快时慢。当作补充信息源可以，当主力还差点意思。</p></div></div>
+
+      <div class="cmt"><span class="av bg3">夜</span><div class="cmt-b"><div class="cmt-m"><b>夜航船</b><span>10-15</span></div><p>反向找图帮了大忙，一张资料图找了很久出处，最后在这里定位到原站点。这个功能值得单独收藏。</p></div></div>
+
+      <div class="cmt"><span class="av bg4">老</span><div class="cmt-b"><div class="cmt-m"><b>老陈的键盘</b><span>10-12</span></div><p>希望以后能加个中文界面选项，现在靠浏览器翻译虽然能用，但有些按钮翻得不太直观。</p></div></div>
+
+    </div>
+  </section>
+
+  <!-- ============ 相关资讯 ============ -->
+  <section class="sec" id="news">
+    <div class="sec-h">
+      <h2>相关资讯：入口与检索生态的动态</h2>
+      <a class="sec-more" href="/#update">查看更新动态</a>
+    </div>
+    <div class="news">
+
+      <article class="card news-card">
+        <div class="nd"><i></i>2026-11-06</div>
+        <h3>搜索引擎入口页面正在回归「工具属性」</h3>
+        <p>从近期多个搜索入口的改版看，首页信息密度在下降，搜索框与核心工具的权重上升，www.yandex.com 的形态是这一趋势的典型样本。</p>
+        <span class="nlink">阅读要点 →</span>
+      </article>
+
+      <article class="card news-card">
+        <div class="nd"><i></i>2026-11-03</div>
+        <h3>图片反向查找在素材溯源中的实际表现</h3>
+        <p>对未裁剪原图，反向查找的命中率明显更高；经过滤镜或二次压缩的图片，需要配合尺寸与颜色筛选才能提升准确度。</p>
+        <span class="nlink">阅读要点 →</span>
+      </article>
+
+      <article class="card news-card">
+        <div class="nd"><i></i>2026-10-31</div>
+        <h3>跨语种检索的正确打开方式</h3>
+        <p>中文确认概念、外语检索原文、翻译工具回读，这套三段式流程在多语种信息查找中被反复验证有效，适用于多数跨语种入口。</p>
+        <span class="nlink">阅读要点 →</span>
+      </article>
+
+      <article class="card news-card">
+        <div class="nd"><i></i>2026-10-28</div>
+        <h3>地图街景数据的地区差异从何而来</h3>
+        <p>街景覆盖与采集周期、更新频率密切相关。大城市更新快，中小城市存在滞后，使用前先确认目标地点的数据完整度更稳妥。</p>
+        <span class="nlink">阅读要点 →</span>
+      </article>
+
+      <article class="card news-card">
+        <div class="nd"><i></i>2026-10-24</div>
+        <h3>新闻聚合页的摘要阅读法</h3>
+        <p>聚合页适合扫标题与摘要快速判断话题热度，但来源混杂，重要信息仍应回到原文核对，避免只看摘要产生误读。</p>
+        <span class="nlink">阅读要点 →</span>
+      </article>
+
+      <article class="card news-card">
+        <div class="nd"><i></i>2026-10-20</div>
+        <h3>结果页分区设计对检索效率的影响</h3>
+        <p>按类型分区呈现结果，能减少用户在单一列表中翻找的成本。www.yandex.com 的结果页在这方面提供了一个可观察的范式。</p>
+        <span class="nlink">阅读要点 →</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ 订阅引导 ============ -->
+  <section class="sec" id="sub">
+    <div class="sub">
+      <div>
+        <h2>订阅入口观察简报</h2>
+        <p>每周整理一次入口页面的模块变化与检索技巧，只发要点，不发广告。</p>
+      </div>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="输入邮箱地址" aria-label="邮箱">
+        <button class="btn btn-main" type="submit">订阅简报</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="footer">
+  <div class="footer-in">
+    <div>
+      <div class="footer-logo"><span class="yb">Y</span>Yandex 导航站</div>
+      <p>本页围绕 www.yandex.com 整理入口结构、功能分布与使用参考，内容为浏览说明性质，不构成任何服务承诺。</p>
+      <p>页面信息以公开可见的界面形态为基础整理，模块位置可能随版本更新变化，请以实际访问为准。</p>
+    </div>
+    <div>
+      <h4>栏目导航</h4>
+      <a href="/#intro">入口简介</a>
+      <a href="/#cats">服务分类</a>
+      <a href="/#rec">功能推荐</a>
+      <a href="/#update">更新动态</a>
+      <a href="/#deep">深度解析</a>
+    </div>
+    <div>
+      <h4>使用参考</h4>
+      <a href="/#guide">使用指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#cmt">用户评论</a>
+      <a href="/#sub">订阅简报</a>
+    </div>
+    <div>
+      <h4>友情链接</h4>
+      <a href="/#hero">搜索入口导航</a>
+      <a href="/#rec">图片检索说明</a>
+      <a href="/#rec">在线翻译工具</a>
+      <a href="/#rec">地图服务参考</a>
+      <a href="/#rec">新闻聚合入口</a>
+    </div>
+  </div>
+  <div class="copy">
+    <p>© 2026 Yandex 导航站 · 内容整理与页面设计保留权利 <span>|</span> 免责声明：本页为第三方整理的使用参考，与所涉服务提供方无隶属关系 <span>|</span> 友情链接位虚位以待</p>
+  </div>
+</footer>
+
+</body>
+        </html>
