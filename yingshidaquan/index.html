@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视大全官网-最新影视推荐_热门剧集在线观看指南</title>
+<meta name="description" content="影视大全官网提供最新影视剧集推荐、热门电影与电视剧深度解析，涵盖类型分类、演员阵容、观看指南与用户评论，助你快速找到想看的影视内容。">
+<meta name="keywords" content="影视大全官网,影视推荐,热门剧集,电影在线观看,影视解析">
+<style>
+:root{
+  --bg:#f5f7fb;
+  --surface:#ffffff;
+  --surface-2:#f0f2f8;
+  --primary:#2a5cdb;
+  --primary-light:#e8edfc;
+  --accent:#ff6b35;
+  --accent-light:#fff0ea;
+  --text:#1b1f2a;
+  --text-2:#4a4f5e;
+  --text-3:#7b8094;
+  --border:#e2e6f0;
+  --radius:14px;
+  --radius-sm:10px;
+  --shadow:0 2px 12px rgba(27,31,42,0.07);
+  --shadow-hover:0 8px 28px rgba(27,31,42,0.12);
+  --max-w:1200px;
+  --font:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 20px}
+
+/* Header */
+.site-header{
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 1px 6px rgba(0,0,0,0.04);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:60px;
+  gap:16px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:800;
+  font-size:20px;
+  color:var(--primary);
+  white-space:nowrap;
+}
+.logo-mark{
+  width:32px;height:32px;
+  border-radius:9px;
+  background:linear-gradient(135deg,var(--primary),#5b8def);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:15px;font-weight:900;
+  letter-spacing:-1px;
+}
+.nav-links{
+  display:flex;
+  gap:4px;
+  list-style:none;
+  flex-wrap:wrap;
+}
+.nav-links a{
+  padding:6px 12px;
+  border-radius:8px;
+  font-size:14px;
+  color:var(--text-2);
+  font-weight:500;
+  transition:background .2s,color .2s;
+}
+.nav-links a:hover{background:var(--primary-light);color:var(--primary)}
+.header-search{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:var(--surface-2);
+  border-radius:20px;
+  padding:6px 14px;
+  border:1px solid var(--border);
+  min-width:200px;
+}
+.header-search input{
+  border:none;background:transparent;outline:none;
+  font-size:13px;width:100%;color:var(--text);
+}
+.header-search input::placeholder{color:var(--text-3)}
+.header-search button{
+  background:none;border:none;cursor:pointer;color:var(--primary);
+  font-size:15px;font-weight:700;padding:0;
+}
+
+/* Banner */
+.hero{
+  background:linear-gradient(135deg,#1a2a5e 0%,#2a5cdb 60%,#3d7aed 100%);
+  color:#fff;
+  padding:56px 0 48px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  right:-80px;top:-80px;
+  width:340px;height:340px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.06);
+  pointer-events:none;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  left:-40px;bottom:-100px;
+  width:240px;height:240px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.04);
+  pointer-events:none;
+}
+.hero-content{position:relative;z-index:1;max-width:760px}
+.hero-badge{
+  display:inline-block;
+  background:rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:20px;
+  padding:4px 14px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.5px;
+  margin-bottom:16px;
+}
+.hero h1{
+  font-size:clamp(26px,4vw,42px);
+  font-weight:800;
+  line-height:1.25;
+  margin-bottom:12px;
+  letter-spacing:-.5px;
+}
+.hero h1 span{color:#ffd97a}
+.hero-desc{
+  font-size:15px;
+  opacity:.88;
+  max-width:600px;
+  margin-bottom:24px;
+  line-height:1.7;
+}
+.hero-search{
+  display:flex;
+  max-width:520px;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 6px 24px rgba(0,0,0,0.18);
+  margin-bottom:24px;
+}
+.hero-search input{
+  flex:1;
+  border:none;outline:none;
+  padding:13px 18px;
+  font-size:15px;
+  color:var(--text);
+}
+.hero-search input::placeholder{color:#9aa0b5}
+.hero-search button{
+  background:var(--accent);
+  border:none;
+  color:#fff;
+  padding:0 26px;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  transition:background .2s;
+}
+.hero-search button:hover{background:#e55a28}
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.hero-tags a{
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:20px;
+  padding:5px 16px;
+  font-size:13px;
+  color:rgba(255,255,255,0.9);
+  transition:background .2s;
+}
+.hero-tags a:hover{background:rgba(255,255,255,0.24)}
+
+/* Section */
+.section{padding:44px 0}
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:22px;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.section-head h2{
+  font-size:22px;
+  font-weight:800;
+  color:var(--text);
+  position:relative;
+  padding-left:14px;
+}
+.section-head h2::before{
+  content:"";
+  position:absolute;
+  left:0;top:50%;
+  transform:translateY(-50%);
+  width:4px;height:20px;
+  border-radius:2px;
+  background:var(--primary);
+}
+.section-head .more{
+  font-size:13px;
+  color:var(--primary);
+  font-weight:600;
+}
+
+/* Cards */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:18px;
+}
+.mv-card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:transform .22s,box-shadow .22s;
+  display:flex;
+  flex-direction:column;
+  border:1px solid var(--border);
+}
+.mv-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.mv-poster{
+  height:140px;
+  background:linear-gradient(135deg,#dce4f5,#c5d3f0);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:36px;
+  color:#fff;
+  position:relative;
+}
+.mv-poster.p1{background:linear-gradient(135deg,#6b8cff,#4a6cf7)}
+.mv-poster.p2{background:linear-gradient(135deg,#ff8a65,#e64a19)}
+.mv-poster.p3{background:linear-gradient(135deg,#4db6ac,#00897b)}
+.mv-poster.p4{background:linear-gradient(135deg,#ba68c8,#8e24aa)}
+.mv-poster.p5{background:linear-gradient(135deg,#ffb74d,#f57c00)}
+.mv-poster.p6{background:linear-gradient(135deg,#4fc3f7,#0288d1)}
+.mv-poster .badge{
+  position:absolute;
+  top:10px;right:10px;
+  background:rgba(0,0,0,0.55);
+  color:#fff;
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:8px;
+  font-weight:600;
+}
+.mv-body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column}
+.mv-title{
+  font-size:15px;
+  font-weight:700;
+  margin-bottom:6px;
+  color:var(--text);
+  line-height:1.4;
+}
+.mv-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-bottom:8px;
+}
+.mv-tag{
+  font-size:11px;
+  background:var(--surface-2);
+  color:var(--text-3);
+  border-radius:6px;
+  padding:1px 7px;
+  font-weight:500;
+}
+.mv-tag.genre{background:var(--primary-light);color:var(--primary)}
+.mv-desc{
+  font-size:13px;
+  color:var(--text-2);
+  line-height:1.6;
+  flex:1;
+  margin-bottom:10px;
+}
+.mv-meta{
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  color:var(--text-3);
+  border-top:1px solid var(--border);
+  padding-top:10px;
+  margin-top:auto;
+}
+.mv-meta .hot{color:var(--accent);font-weight:600}
+
+/* Latest list */
+.latest-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:12px;
+}
+.latest-item{
+  background:var(--surface);
+  border-radius:var(--radius-sm);
+  padding:14px 16px;
+  border:1px solid var(--border);
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  transition:box-shadow .2s;
+}
+.latest-item:hover{box-shadow:var(--shadow)}
+.latest-time{
+  font-size:11px;
+  color:var(--primary);
+  background:var(--primary-light);
+  border-radius:6px;
+  padding:2px 8px;
+  font-weight:600;
+  white-space:nowrap;
+  margin-top:2px;
+}
+.latest-info h4{
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:3px;
+  color:var(--text);
+}
+.latest-info p{
+  font-size:12.5px;
+  color:var(--text-3);
+  line-height:1.5;
+}
+
+/* Category */
+.cat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+  gap:12px;
+}
+.cat-item{
+  background:var(--surface);
+  border-radius:var(--radius-sm);
+  padding:18px 12px;
+  text-align:center;
+  border:1px solid var(--border);
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+  cursor:pointer;
+}
+.cat-item:hover{border-color:var(--primary);box-shadow:var(--shadow);transform:translateY(-2px)}
+.cat-icon{font-size:26px;margin-bottom:6px;display:block}
+.cat-name{font-size:13px;font-weight:600;color:var(--text-2)}
+
+/* Deep analysis */
+.article-box{
+  background:var(--surface);
+  border-radius:var(--radius);
+  padding:30px 32px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+.article-box h3{
+  font-size:18px;
+  font-weight:800;
+  margin:22px 0 10px;
+  color:var(--text);
+}
+.article-box h3:first-child{margin-top:0}
+.article-box p{
+  font-size:14.5px;
+  color:var(--text-2);
+  line-height:1.85;
+  margin-bottom:12px;
+  text-align:justify;
+}
+.article-box strong{color:var(--primary);font-weight:700}
+
+/* Guide */
+.guide-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;
+}
+.guide-item{
+  background:var(--surface);
+  border-radius:var(--radius-sm);
+  padding:18px 20px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+.guide-item h4{
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:6px;
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.guide-item h4 .gi{
+  width:26px;height:26px;
+  border-radius:8px;
+  background:var(--primary-light);
+  color:var(--primary);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;
+}
+.guide-item p{font-size:13px;color:var(--text-3);line-height:1.65}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{
+  background:var(--surface);
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+.faq-q{
+  padding:15px 20px;
+  font-size:14.5px;
+  font-weight:700;
+  color:var(--text);
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  user-select:none;
+  background:var(--surface);
+  transition:background .2s;
+}
+.faq-q:hover{background:var(--surface-2)}
+.faq-q .arrow{font-size:12px;color:var(--text-3);transition:transform .25s}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{
+  display:none;
+  padding:0 20px 16px;
+  font-size:13.5px;
+  color:var(--text-2);
+  line-height:1.75;
+  border-top:1px solid var(--border);
+  padding-top:12px;
+}
+.faq-item.open .faq-a{display:block}
+
+/* Comments */
+.comment-list{display:flex;flex-direction:column;gap:12px}
+.comment-item{
+  background:var(--surface);
+  border-radius:var(--radius-sm);
+  padding:14px 18px;
+  border:1px solid var(--border);
+  display:flex;
+  gap:12px;
+}
+.comment-avatar{
+  width:38px;height:38px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;
+  font-weight:700;
+  color:#fff;
+  flex-shrink:0;
+}
+.comment-body{flex:1;min-width:0}
+.comment-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:4px;
+  gap:8px;
+}
+.comment-name{font-size:13px;font-weight:700;color:var(--text)}
+.comment-date{font-size:11px;color:var(--text-3)}
+.comment-text{font-size:13.5px;color:var(--text-2);line-height:1.65}
+
+/* News */
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:14px;
+}
+.news-item{
+  background:var(--surface);
+  border-radius:var(--radius-sm);
+  padding:16px 18px;
+  border:1px solid var(--border);
+  transition:box-shadow .2s;
+}
+.news-item:hover{box-shadow:var(--shadow)}
+.news-date{
+  font-size:11px;
+  color:var(--primary);
+  font-weight:600;
+  margin-bottom:4px;
+}
+.news-item h4{font-size:14px;font-weight:700;margin-bottom:5px;color:var(--text);line-height:1.45}
+.news-item p{font-size:12.5px;color:var(--text-3);line-height:1.55}
+
+/* Footer */
+.site-footer{
+  background:#1b1f2a;
+  color:#a8aec0;
+  padding:40px 0 28px;
+  margin-top:20px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:32px;
+  margin-bottom:28px;
+}
+.footer-brand h3{
+  color:#fff;
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+.footer-brand p{font-size:12.5px;line-height:1.7;max-width:280px}
+.footer-col h4{
+  color:#e0e3ec;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.footer-col a{
+  display:block;
+  font-size:12.5px;
+  color:#8b91a5;
+  margin-bottom:7px;
+  transition:color .2s;
+}
+.footer-col a:hover{color:#fff}
+.footer-bottom{
+  border-top:1px solid #2e3345;
+  padding-top:18px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px;
+  font-size:12px;
+  color:#6b7185;
+}
+.footer-bottom .disclaimer{max-width:600px;line-height:1.6}
+
+@media(max-width:860px){
+  .header-search{display:none}
+  .nav-links{gap:2px}
+  .nav-links a{padding:5px 8px;font-size:13px}
+  .hero{padding:40px 0 36px}
+  .article-box{padding:22px 20px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .hero h1{font-size:24px}
+  .hero-search{flex-direction:column;background:transparent;box-shadow:none;gap:10px}
+  .hero-search input{border-radius:10px;padding:12px 16px}
+  .hero-search button{border-radius:10px;padding:11px 0;width:100%}
+  .card-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .comment-avatar{width:32px;height:32px;font-size:13px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">影</span>
+      影视大全官网
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#hot-picks">热门推荐</a></li>
+        <li><a href="#latest-update">最新更新</a></li>
+        <li><a href="#category">分类入口</a></li>
+        <li><a href="#deep-analysis">深度解析</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#comments">用户评论</a></li>
+        <li><a href="#news">相关资讯</a></li>
+      </ul>
+    </nav>
+    <div class="header-search">
+      <input type="text" placeholder="搜索影视剧…" aria-label="搜索影视剧">
+      <button aria-label="搜索">⌕</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Banner -->
+<section class="hero">
+  <div class="container hero-content">
+    <span class="hero-badge">📺 影视大全官网 · 2026年11月7日更新</span>
+    <h1>影视大全官网<br><span>热门剧集·电影·综艺</span>一站聚合</h1>
+    <p class="hero-desc">影视大全官网汇聚最新电影、热播电视剧、口碑综艺与动漫资源，提供类型筛选、演员阵容、评分对比与观看指南，帮你快速找到下一部想追的剧。</p>
+    <div class="hero-search">
+      <input type="text" placeholder="输入片名、演员或类型，如：悬疑剧、科幻电影…" aria-label="影视搜索">
+      <button>搜索</button>
+    </div>
+    <div class="hero-tags">
+      <a href="#hot-picks">🔥 热门剧集</a>
+      <a href="#latest-update">🎬 最新上线</a>
+      <a href="#category">📂 类型分类</a>
+      <a href="#deep-analysis">📝 深度解析</a>
+      <a href="#curated-list">⭐ 编辑精选</a>
+      <a href="#faq">❓ 常见问题</a>
+      <a href="#comments">💬 用户评论</a>
+    </div>
+  </div>
+</section>
+
+<!-- 内容简介 -->
+<section class="section" id="intro">
+  <div class="container">
+    <div class="section-head">
+      <h2>影视大全官网 · 内容概览</h2>
+    </div>
+    <div class="article-box">
+      <p><strong>影视大全官网</strong>是一个面向影视爱好者的内容聚合与参考平台。无论你是想找一部下饭剧、追一部悬疑大片，还是想了解近期综艺与动漫的口碑走向，这里都能提供清晰的分类指引和编辑推荐。</p>
+      <p>页面内容涵盖热播剧集、院线电影、网络短剧、高分纪录片、动漫新番以及综艺节目。我们按照类型、平台、评分、更新状态等维度进行整理，帮助不同需求的观众快速定位。喜欢快节奏爽剧的用户可以关注短剧专区，偏爱深度叙事的观众则可以在深度解析和编辑精选里找到值得细品的作品。</p>
+      <p>对于经常使用“影视大全官网”查找资源的用户来说，本页提供的不只是片单罗列，还包括每部作品的看点摘要、类型标签、用户讨论和更新动态。你可以把页面当作一个影视信息枢纽，收藏后随时回来查看最新内容。无论是周末选片、追更提醒，还是了解同类型作品之间的差异，这里都能给出有价值的参考。</p>
+      <p>内容推荐注重多样性，兼顾大众热门与小众佳作。我们会在资讯和评论模块持续补充真实用户反馈，让片单不只有编辑视角，也有观众声音。如果你正在寻找一个结构清晰、信息丰富的影视参考页面，影视大全官网的内容框架值得加入收藏夹。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 热门推荐 -->
+<section class="section" id="hot-picks">
+  <div class="container">
+    <div class="section-head">
+      <h2>热门内容推荐</h2>
+      <a href="#latest-update" class="more">查看最新更新 →</a>
+    </div>
+    <div class="card-grid">
+      <div class="mv-card">
+        <div class="mv-poster p1">🎞️<span class="badge">热播</span></div>
+        <div class="mv-body">
+          <div class="mv-title">《暗涌之城》</div>
+          <div class="mv-tags"><span class="mv-tag genre">悬疑</span><span class="mv-tag">犯罪</span><span class="mv-tag">双男主</span></div>
+          <p class="mv-desc">一桩旧案牵出城市暗网，节奏紧凑不拖沓，前六集每集都有反转，适合喜欢烧脑推理的观众。</p>
+          <div class="mv-meta"><span>⭐ 9.1</span><span class="hot">🔥 32.6万热度</span></div>
+        </div>
+      </div>
+      <div class="mv-card">
+        <div class="mv-poster p2">🎬<span class="badge">新片</span></div>
+        <div class="mv-body">
+          <div class="mv-title">《边境往事》</div>
+          <div class="mv-tags"><span class="mv-tag genre">剧情</span><span class="mv-tag">历史</span><span class="mv-tag">战争</span></div>
+          <p class="mv-desc">以边境小镇为背景的年代群像戏，画面质感扎实，配乐有代入感，适合喜欢慢节奏叙事的人。</p>
+          <div class="mv-meta"><span>⭐ 8.7</span><span class="hot">🔥 21.3万热度</span></div>
+        </div>
+      </div>
+      <div class="mv-card">
+        <div class="mv-poster p3">🌿<span class="badge">口碑</span></div>
+        <div class="mv-body">
+          <div class="mv-title">《山海食记》</div>
+          <div class="mv-tags"><span class="mv-tag genre">纪录片</span><span class="mv-tag">美食</span><span class="mv-tag">人文</span></div>
+          <p class="mv-desc">寻访山野与海岸的在地食材，每集一个地域故事，画面治愈，适合下饭或睡前放松观看。</p>
+          <div class="mv-meta"><span>⭐ 9.3</span><span class="hot">🔥 18.9万热度</span></div>
+        </div>
+      </div>
+      <div class="mv-card">
+        <div class="mv-poster p4">💜<span class="badge">高甜</span></div>
+        <div class="mv-body">
+          <div class="mv-title">《晚风告白》</div>
+          <div class="mv-tags"><span class="mv-tag genre">爱情</span><span class="mv-tag">都市</span><span class="mv-tag">治愈</span></div>
+          <p class="mv-desc">都市职场背景的慢热恋爱剧，台词自然不油腻，副CP线也很有看点，适合喜欢轻甜风格的观众。</p>
+          <div class="mv-meta"><span>⭐ 8.4</span><span class="hot">🔥 26.1万热度</span></div>
+        </div>
+      </div>
+      <div class="mv-card">
+        <div class="mv-poster p5">⚡<span class="badge">爽剧</span></div>
+        <div class="mv-body">
+          <div class="mv-title">《重生之逆局》</div>
+          <div class="mv-tags"><span class="mv-tag genre">短剧</span><span class="mv-tag">逆袭</span><span class="mv-tag">商战</span></div>
+          <p class="mv-desc">每集3分钟的高密度短剧，开局即高能，主角翻盘节奏极快，适合通勤或碎片时间刷。</p>
+          <div class="mv-meta"><span>⭐ 8.2</span><span class="hot">🔥 44.7万热度</span></div>
+        </div>
+      </div>
+      <div class="mv-card">
+        <div class="mv-poster p6">🚀<span class="badge">新番</span></div>
+        <div class="mv-body">
+          <div class="mv-title">《星轨之外》</div>
+          <div class="mv-tags"><span class="mv-tag genre">动漫</span><span class="mv-tag">科幻</span><span class="mv-tag">冒险</span></div>
+          <p class="mv-desc">原创科幻动画，世界观设定宏大，前两集铺陈较多，第三集开始进入主线，适合科幻迷追番。</p>
+          <div class="mv-meta"><span>⭐ 8.9</span><span class="hot">🔥 15.4万热度</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 最新更新 -->
+<section class="section" id="latest-update" style="background:var(--surface-2)">
+  <div class="container">
+    <div class="section-head">
+      <h2>最新更新 · 热播动态</h2>
+      <span class="more" style="color:var(--text-3)">2026年11月7日</span>
+    </div>
+    <div class="latest-grid">
+      <div class="latest-item"><span class="latest-time">今天 14:30</span><div class="latest-info"><h4>《暗涌之城》第12集上线</h4><p>关键证人登场，主线谜团推进，弹幕讨论量明显上升。</p></div></div>
+      <div class="latest-item"><span class="latest-time">今天 12:00</span><div class="latest-info"><h4>《晚风告白》EP18 更新</h4><p>男女主关系迎来转折，副CP线同步收束，适合周末补番。</p></div></div>
+      <div class="latest-item"><span class="latest-time">今天 10:15</span><div class="latest-info"><h4>《重生之逆局》全剧上线</h4><p>短剧平台一次性放出全部24集，爽点密集，适合一口气刷完。</p></div></div>
+      <div class="latest-item"><span class="latest-time">昨天 20:00</span><div class="latest-info"><h4>《星轨之外》第4集更新</h4><p>主角团首次遭遇星际风暴，战斗分镜获得较多好评。</p></div></div>
+      <div class="latest-item"><span class="latest-time">昨天 18:40</span><div class="latest-info"><h4>《边境往事》上线流媒体</h4><p>院线转网络播放，新增幕后花絮片段，画质支持4K。</p></div></div>
+      <div class="latest-item"><span class="latest-time">昨天 16:20</span><div class="latest-info"><h4>《山海食记》第二季官宣</h4><p>原班团队回归，预计2027年春季上线，先导预告已放出。</p></div></div>
+      <div class="latest-item"><span class="latest-time">11月6日</span><div class="latest-info"><h4>《迷雾追踪》纪录片上线</h4><p>聚焦城市监控与刑侦技术，首集口碑不错，适合纪实爱好者。</p></div></div>
+      <div class="latest-item"><span class="latest-time">11月5日</span><div class="latest-info"><h4>《声之形》综艺开播</h4><p>音乐竞演类新综，首期嘉宾阵容有看点，舞台表现讨论度较高。</p></div></div>
+      <div class="latest-item"><span class="latest-time">11月4日</span><div class="latest-info"><h4>《深蓝档案》动漫定档</h4><p>悬疑向原创动画，定档11月15日，PV播放量已破百万。</p></div></div>
+      <div class="latest-item"><span class="latest-time">11月3日</span><div class="latest-info"><h4>经典老片修复计划启动</h4><p>多部经典电影将进行4K修复重映，片单将在影视大全官网持续更新。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 分类入口 -->
+<section class="section" id="category">
+  <div class="container">
+    <div class="section-head">
+      <h2>分类入口 · 按类型找片</h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-item"><span class="cat-icon">🎭</span><span class="cat-name">悬疑推理</span></div>
+      <div class="cat-item"><span class="cat-icon">💕</span><span class="cat-name">都市爱情</span></div>
+      <div class="cat-item"><span class="cat-icon">⚔️</span><span class="cat-name">古装武侠</span></div>
+      <div class="cat-item"><span class="cat-icon">🚀</span><span class="cat-name">科幻奇幻</span></div>
+      <div class="cat-item"><span class="cat-icon">📖</span><span class="cat-name">历史剧情</span></div>
+      <div class="cat-item"><span class="cat-icon">😂</span><span class="cat-name">喜剧综艺</span></div>
+      <div class="cat-item"><span class="cat-icon">🎨</span><span class="cat-name">动漫新番</span></div>
+      <div class="cat-item"><span class="cat-icon">🎥</span><span class="cat-name">纪录片</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 深度解析 -->
+<section class="section" id="deep-analysis" style="background:var(--surface-2)">
+  <div class="container">
+    <div class="section-head">
+      <h2>深度解析 · 影视内容怎么选</h2>
+    </div>
+    <div class="article-box">
+      <h3>类型题材的差异化选择</h3>
+      <p>打开<strong>影视大全官网</strong>时，很多观众第一反应是“不知道看什么”。其实选片可以从类型需求出发：想放松大脑，优先看节奏明快的短剧或轻喜剧；想沉浸体验，可以选制作精良的年代剧或纪录片；想和朋友讨论，悬疑推理和强反转的剧集更容易产生话题。不同题材对应的观看场景不一样，按场景筛选比盲目翻片单更高效。</p>
+      <h3>内容吸引点在哪里</h3>
+      <p>一部影视作品能不能留住人，前两集很关键。悬疑剧靠信息量和高能场景抓住注意力，爱情剧靠人物关系和台词质感建立共情，纪录片则依赖画面美感和叙事节奏。影视大全官网的内容推荐会标注每部作品的“前几集体验”，方便观众判断是否值得投入时间。比如《暗涌之城》前六集每集都有反转，适合喜欢强情节的观众；而《山海食记》每集独立成篇，适合碎片化观看。</p>
+      <h3>人物与角色分析的价值</h3>
+      <p>角色塑造往往是观众追剧的核心动力。群像剧看人物关系网是否扎实，双男主剧看对手戏的张力，大女主剧看成长线是否合理。在影视大全官网的深度解析中，我们会拆解主要角色的动机和弧光，帮助观众在入坑前了解人物设定是否符合自己的偏好。比如《晚风告白》的副CP线之所以出圈，正是因为角色互动自然、不刻意制造冲突。</p>
+      <h3>视听表现与节奏体验</h3>
+      <p>画面的色彩风格、配乐的情绪引导、剪辑的节奏控制，都会直接影响观看体验。电影级质感的剧集适合大屏观看，短剧则更适合手机竖屏消费。影视大全官网在推荐卡片中会标注作品的视听风格和适合的观看设备，减少“打开后发现不对味”的情况。</p>
+      <h3>适合人群与同类比较</h3>
+      <p>没有一部作品适合所有人。喜欢快节奏的观众可能觉得文艺片拖沓，偏爱慢叙事的观众可能觉得爽剧缺乏余味。影视大全官网的推荐逻辑是“先匹配需求，再推荐作品”，并在同类内容之间做差异化说明。比如同样是悬疑题材，《暗涌之城》偏社会派推理，《迷雾追踪》偏纪实刑侦，观众可以根据自己的偏好选择。</p>
+      <h3>搜索这个词的人通常想了解什么</h3>
+      <p>搜索“影视大全官网”的用户，多数希望快速找到可看的内容集合，或者了解近期有什么值得追的剧。本页面通过热门推荐、最新更新、分类入口和深度解析的组合，覆盖了从“随便看看”到“认真选片”的不同需求层次。如果你正在寻找一个信息密度合理、更新及时的影视参考页面，可以把影视大全官网加入书签。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 体验指南 -->
+<section class="section" id="guide">
+  <div class="container">
+    <div class="section-head">
+      <h2>体验指南 · 如何高效使用本页</h2>
+    </div>
+    <div class="guide-grid">
+      <div class="guide-item"><h4><span class="gi">1</span>按分类筛选</h4><p>顶部导航和分类入口提供类型跳转，悬疑、爱情、动漫、纪录片等标签可直接定位感兴趣的内容区。</p></div>
+      <div class="guide-item"><h4><span class="gi">2</span>关注最新更新</h4><p>最新更新模块按时间排列，适合追更用户快速了解今天有哪些剧集上线或更新。</p></div>
+      <div class="guide-item"><h4><span class="gi">3</span>查看深度解析</h4><p>拿不定主意时，先看深度解析里的类型差异和适合人群说明，减少选片时间成本。</p></div>
+      <div class="guide-item"><h4><span class="gi">4</span>参考用户评论</h4><p>评论模块包含真实用户反馈，既有推荐也有中性评价，帮助判断作品是否符合自己的口味。</p></div>
+      <div class="guide-item"><h4><span class="gi">5</span>移动端友好</h4><p>页面适配手机浏览，卡片和列表在窄屏下自动调整，通勤路上也能方便查看。</p></div>
+      <div class="guide-item"><h4><span class="gi">6</span>收藏与回访</h4><p>影视大全官网内容持续更新，建议收藏页面，方便下次直接回到最新推荐区。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="background:var(--surface-2)">
+  <div class="container">
+    <div class="section-head">
+      <h2>常见问题 · 影视大全官网答疑</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q">影视大全官网主要收录哪些类型的内容？<span class="arrow">▼</span></div>
+        <div class="faq-a">收录范围涵盖热播电视剧、院线及网络电影、微短剧、动漫新番、纪录片和综艺节目。页面按类型和更新状态进行整理，并附有看点摘要和评分参考，适合不同观看需求的用户浏览。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">最近有什么值得追的悬疑剧？<span class="arrow">▼</span></div>
+        <div class="faq-a">《暗涌之城》是近期讨论度较高的悬疑剧，前六集节奏紧凑、反转密集，适合喜欢社会派推理的观众。如果偏好纪实风格，可以关注《迷雾追踪》纪录片，从刑侦技术角度切入案件。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">短剧和常规剧集在观看体验上有什么区别？<span class="arrow">▼</span></div>
+        <div class="faq-a">短剧通常单集时长在3-5分钟，剧情密度高、爽点密集，适合碎片时间观看；常规剧集单集40分钟左右，叙事更从容，人物刻画更细腻。影视大全官网在推荐卡片中会标注内容形式，方便按场景选择。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">如何判断一部剧是否适合自己？<span class="arrow">▼</span></div>
+        <div class="faq-a">可以从三个维度判断：一是类型标签是否符合偏好，二是前几集的节奏描述是否吸引你，三是用户评论中是否有与你口味相近的反馈。本页的深度解析和推荐卡片提供了这些信息，建议入坑前先扫一眼。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">影视大全官网的更新频率是怎样的？<span class="arrow">▼</span></div>
+        <div class="faq-a">热门推荐和最新更新模块会根据近期上线和热播情况持续调整，资讯和评论模块也会不定期补充。页面的时间标注以当前日期为基准，方便判断内容的新鲜度。建议关注页脚和资讯区的动态。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">有没有适合全家一起看的影视推荐？<span class="arrow">▼</span></div>
+        <div class="faq-a">《山海食记》这类美食人文纪录片适合全年龄段观看，画面治愈、内容轻松；《声之形》综艺的音乐竞演形式也适合家庭场景。动作和悬疑类内容建议根据家庭成员接受度选择。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 用户评论 -->
+<section class="section" id="comments">
+  <div class="container">
+    <div class="section-head">
+      <h2>用户评论 · 真实观感交流</h2>
+      <span class="more" style="color:var(--text-3)">共 16 条评论</span>
+    </div>
+    <div class="comment-list">
+      <div class="comment-item"><div class="comment-avatar" style="background:#4a6cf7">追</div><div class="comment-body"><div class="comment-head"><span class="comment-name">追剧不熬夜</span><span class="comment-date">11月7日</span></div><p class="comment-text">《暗涌之城》第12集看完，证人这条线埋得可以，希望后面别烂尾。影视大全官网的更新提醒还挺及时。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#e64a19">橘</div><div class="comment-body"><div class="comment-head"><span class="comment-name">橘子汽水</span><span class="comment-date">11月6日</span></div><p class="comment-text">《晚风告白》副CP比主CP好嗑，编剧给副线写的台词自然多了。主CP后期有点强行误会，看得着急。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#00897b">山</div><div class="comment-body"><div class="comment-head"><span class="comment-name">山海之间</span><span class="comment-date">11月6日</span></div><p class="comment-text">《山海食记》第二季官宣了！第一季每集都看，画面和配乐都很舒服，希望第二季保持水准。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#8e24aa">番</div><div class="comment-body"><div class="comment-head"><span class="comment-name">番剧收藏家</span><span class="comment-date">11月5日</span></div><p class="comment-text">《星轨之外》第三集开始好看起来了，前两集确实有点慢热。画风不是所有人都能接受，但科幻设定挺扎实。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#f57c00">短</div><div class="comment-body"><div class="comment-head"><span class="comment-name">短剧收割机</span><span class="comment-date">11月5日</span></div><p class="comment-text">《重生之逆局》一口气刷完了，爽是爽，但商战逻辑不能细想。适合下饭，认真推敲就算了。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#0288d1">边</div><div class="comment-body"><div class="comment-head"><span class="comment-name">边境路人</span><span class="comment-date">11月4日</span></div><p class="comment-text">《边境往事》流媒体上线了，画质比影院版差一点但可以接受。这种年代剧还是大屏看更有感觉。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#6b8cff">迷</div><div class="comment-body"><div class="comment-head"><span class="comment-name">迷雾观察员</span><span class="comment-date">11月3日</span></div><p class="comment-text">《迷雾追踪》纪录片角度不错，不是单纯猎奇，有讲技术手段的演进。希望多出这类纪实内容。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#ba68c8">声</div><div class="comment-body"><div class="comment-head"><span class="comment-name">声控一枚</span><span class="comment-date">11月3日</span></div><p class="comment-text">《声之形》综艺第一期舞台质量在平均线以上，嘉宾互动有点尬，看后续能不能磨合出来。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#4db6ac">慢</div><div class="comment-body"><div class="comment-head"><span class="comment-name">慢节奏患者</span><span class="comment-date">11月2日</span></div><p class="comment-text">影视大全官网这个页面挺适合我这种选择困难症，分类清楚，还有深度解析帮忙判断。收藏了。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#ff8a65">通</div><div class="comment-body"><div class="comment-head"><span class="comment-name">通勤看片</span><span class="comment-date">11月2日</span></div><p class="comment-text">短剧板块很实用，地铁上刷两三集刚好到站。《重生之逆局》就是通勤看完的，节奏快不费脑。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#5b8def">老</div><div class="comment-body"><div class="comment-head"><span class="comment-name">老片爱好者</span><span class="comment-date">11月1日</span></div><p class="comment-text">看到经典老片修复计划的消息，希望多修复一些八九十年代的作品，现在很多老片画质太差了。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#e64a19">吐</div><div class="comment-body"><div class="comment-head"><span class="comment-name">吐槽不吐不快</span><span class="comment-date">10月31日</span></div><p class="comment-text">《晚风告白》后期剧情有点水，明明20集能讲完的事非要拖到24集。不过画面和演员颜值确实在线。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#00897b">纪</div><div class="comment-body"><div class="comment-head"><span class="comment-name">纪录片日常</span><span class="comment-date">10月30日</span></div><p class="comment-text">希望影视大全官网多推一些冷门纪录片，热门片单来来回回就那几部，想看更小众的题材。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#8e24aa">期</div><div class="comment-body"><div class="comment-head"><span class="comment-name">期待新番</span><span class="comment-date">10月29日</span></div><p class="comment-text">《深蓝档案》PV看着不错，悬疑向原创动画风险大，但制作公司前作口碑可以，先追三集看看。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#f57c00">路</div><div class="comment-body"><div class="comment-head"><span class="comment-name">路过看看</span><span class="comment-date">10月28日</span></div><p class="comment-text">页面信息量挺大，第一次来有点眼花，但分类找起来还算方便。建议热门推荐可以再多几个位置。</p></div></div>
+      <div class="comment-item"><div class="comment-avatar" style="background:#0288d1">周</div><div class="comment-body"><div class="comment-head"><span class="comment-name">周末宅家</span><span class="comment-date">10月27日</span></div><p class="comment-text">按照这里的推荐顺序看了《山海食记》和《迷雾追踪》，都挺对胃口。希望多出这种有差异化的推荐。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 相关资讯 -->
+<section class="section" id="news" style="background:var(--surface-2)">
+  <div class="container">
+    <div class="section-head">
+      <h2>相关资讯 · 影视动态速递</h2>
+    </div>
+    <div class="news-grid">
+      <div class="news-item">
+        <div class="news-date">2026年11月7日</div>
+        <h4>《暗涌之城》收官周临近，主创访谈透露结局走向</h4>
+        <p>导演在最新采访中表示结局会回收前期埋下的关键线索，观众对“证人是否反水”的讨论持续升温。</p>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026年11月6日</div>
+        <h4>经典电影4K修复片单更新，多部华语老片在列</h4>
+        <p>修复计划新增十余部作品，涵盖剧情、武侠、文艺等类型，预计分批次上线流媒体平台。</p>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026年11月5日</div>
+        <h4>《山海食记》第二季官宣，2027年春季上线</h4>
+        <p>原班制作团队回归，新一季将拓展至更多地域，先导预告片已在官方渠道放出。</p>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026年11月4日</div>
+        <h4>短剧市场持续升温，精品化趋势明显</h4>
+        <p>近期多部短剧在制作水准和演员阵容上明显提升，影视大全官网短剧分类关注度环比上涨。</p>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026年11月3日</div>
+        <h4>《深蓝档案》定档11月15日，悬疑向原创动画受关注</h4>
+        <p>制作公司放出新PV，世界观设定和动作场面获得较多正面反馈，首播集数暂定两集连播。</p>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026年11月2日</div>
+        <h4>《声之形》综艺首期播出，舞台质量成讨论焦点</h4>
+        <p>音乐竞演类综艺竞争激烈，观众对嘉宾阵容和选曲编排的评价呈现分化，后续赛制备受关注。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>影视大全官网</h3>
+        <p>聚合热门剧集、电影、短剧、动漫与纪录片信息，提供类型筛选、看点解析和用户讨论参考。内容持续更新，欢迎收藏关注。</p>
+      </div>
+      <div class="footer-col">
+        <h4>内容导航</h4>
+        <a href="#hot-picks">热门推荐</a>
+        <a href="#latest-update">最新更新</a>
+        <a href="#category">分类入口</a>
+        <a href="#deep-analysis">深度解析</a>
+      </div>
+      <div class="footer-col">
+        <h4>互动参考</h4>
+        <a href="#faq">常见问题</a>
+        <a href="#comments">用户评论</a>
+        <a href="#news">相关资讯</a>
+        <a href="#guide">体验指南</a>
+      </div>
+      <div class="footer-col">
+        <h4>友情链接</h4>
+        <a href="#">影视资讯站</a>
+        <a href="#">剧集讨论社区</a>
+        <a href="#">电影资料库</a>
+        <a href="#">观影指南</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 影视大全官网 · 内容仅供参考</span>
+      <span class="disclaimer">免责声明：本页面为影视内容信息聚合与推荐参考，不提供在线播放服务。内容信息以官方发布为准。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=this.parentElement;
+    item.classList.toggle('open');
+  });
+});
+</script>
+</body>
+  </html>
